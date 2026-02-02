@@ -4,7 +4,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send(`Hello, Render ${process.env.kadai_number || "varError"}!`);
+  res.type("text").send(`Hello, Render ${process.env.kadai_number || "varError"}!`);
+});
+
+app.get("/api/hello", (req, res) => {
+  res.json({message: "Hello!"});
+});
+
+app.get("/about", (req, res) => {
+  res.type("text").send("This is /about page. Powered by Express on Render.");
 });
 
 app.listen(PORT, () => {
