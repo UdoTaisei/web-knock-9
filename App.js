@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello, Render kadai93!");
+  res.send(`Hello, Render ${process.env.kadai_number || "varError"}!`);
 });
 
 app.listen(PORT, () => {
