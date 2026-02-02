@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.get("/", (req, res) => {
   res.type("text").send(`Hello, Render ${process.env.kadai_number || "varError"}!`);
@@ -12,9 +12,9 @@ app.get("/api/hello", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.type("text").send("This is /about page. Powered by Express on Render.");
+  res.type("text").send("This is /about page.");
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
