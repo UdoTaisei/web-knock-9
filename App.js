@@ -1,18 +1,10 @@
 const express = require("express");
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.type("text").send(`Hello, Render ${process.env.kadai_number || "varError"}!`);
-});
-
-app.get("/api/hello", (req, res) => {
-  res.json({message: "Hello!"});
-});
-
-app.get("/about", (req, res) => {
-  res.type("text").send("This is /about page.");
+  res.type("text").send("Hello, Render!");
 });
 
 app.listen(PORT, () => {
